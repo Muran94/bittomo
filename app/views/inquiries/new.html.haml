@@ -1,0 +1,37 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-envelope.l-heading__icon<>
+    お問い合わせ
+
+.col-12.py-3.border-bottom.u-font-size-small
+  サービスに対するお問い合わせを受け付けております！
+  <br>
+  操作方法がわからない、利用規約について確認したい、広告掲載についてや、運営者のプライベートについて等、なんでも構いません！
+  <br>
+  １人で運営しておりますため、返信には、最大で１週間ほど頂いております！御了承下さい！
+  <br><br>
+
+  Twitter、facebookでもお問い合わせを受け付けております！
+  <br>
+  Twitter → #{link_to "https://twitter.com/xxxx", "https://twitter.com/xxxx"}
+  <br>
+  facebook → #{link_to "https://facebook.com/xxxx", "https://facebook.com/xxxx"}
+
+.col-12.pt-3
+  = form_with(model: @inquiry, url: inquiries_path, method: :post) do |f|
+    - if @inquiry.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@inquiry.errors.count, "error")} prohibited this inquiry from being saved:"
+        %ul
+          - @inquiry.errors.full_messages.each do |message|
+            %li= message
+
+    .form-group
+      = f.label :reply_email
+      = f.text_field :reply_email, value: current_user&.email, placeholder: "返信用メールアドレス", class: "form-control"
+    .form-group
+      = f.label :body
+      = f.text_area :body, rows: 5, placeholder: "ここに入力してください。", class: "form-control"
+    = button_tag class: "c-btn c-btn--primary c-btn--block" do
+      %i.fas.fa-paper-plane<>
+      送信

@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        id: ID
+        name: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        gender: 性別
+        birthday: 生年月日
+        activity_prefecture_ids: 活動地域
+      improvement_request:
+        user_id: ユーザーID
+        request_type: 改善要望の種類
+        body: 改善要望の内容
+      inquiry:
+        user_id: ユーザーID
+        reply_email: 返信用メールアドレス
+        body: お問い合わせ内容
+  enums:
+    user:
+      gender:
+        male: 男性
+        female: 女性
+    improvement_request:
+      request_type:
+        improvement: サービス改善
+        addition: サービス追加
+        bug_fix: バグ修正

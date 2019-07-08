@@ -1,0 +1,13 @@
+.l-heading {
+  padding: $space 0;
+  margin: 0;
+  font-size: $font-size-regular;
+  color: $black;
+  background: $light-gray;
+
+  &__icon {
+    color: $primary;
+    margin-right: $space;
+    height: $font-size-regular;
+  }
+}

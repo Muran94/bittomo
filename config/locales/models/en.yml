@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        id: ID
+        name: Name
+        email: Email
+        password: Password
+        gender: Gender
+        birthday: Birthday
+        activity_prefecture_ids: Activity Prefectures
+      improvement_request:
+        user_id: User ID
+        request_type: Request type
+        body: Request content
+      inquiry:
+        user_id: User ID
+        reply_email: Reply email
+        body: Inquiry content
+  enums:
+    user:
+      gender:
+        male: Male
+        female: Female
+    improvement_request:
+      request_type:
+        improvement: Improvement
+        addition: Addition
+        bug_fix: Bug fix

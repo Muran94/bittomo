@@ -1,0 +1,16 @@
+.l-footer {
+  padding: $space-ext-wide 0;
+  background: $black;
+
+  &__nav {
+    &-item {
+      display: block;
+      font-size: $font-size-ext-small;
+      color: $gray;
+
+      &:not(:last-child) {
+        margin-bottom: $space-ext-narrow;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-newspaper.l-heading__icon<>
+    募集一覧
+
+.p-article-list.col-12
+  = render @articles
+
+= paginate(@articles)

@@ -1,0 +1,52 @@
+.c-pagination {
+  font-size: $font-size-small;
+
+  &__page {
+    display: inline-block;
+    padding: 0 $space-ext-narrow;
+    height: $button-size-small;
+    line-height: $button-size-small;
+    text-align: center;
+    border-radius: $border-radius;
+    color: $black;
+    background: $light-gray;
+
+    a {
+      color: inherit;
+    }
+
+    & + & {
+      margin-left: ($space-ext-narrow / 2);
+    }
+
+    &--current {
+      background: $primary;
+      color: $white;
+      font-weight: bold;
+    }
+
+    &--gap {
+      background: none;
+      color: $gray;
+    }
+  }
+  &__prev, &__next {
+    display: inline-block;
+    padding: 0 $space-ext-narrow;
+    height: $button-size-small;
+    line-height: $button-size-small;
+    border-radius: $border-radius;
+    color: $black;
+    background: $light-gray;
+
+    a {
+      color: inherit;
+    }
+  }
+  &__prev {
+    margin-right: ($space-ext-narrow / 2);
+  }
+  &__next {
+    margin-left: ($space-ext-narrow / 2);
+  }
+}

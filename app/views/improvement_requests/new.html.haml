@@ -1,0 +1,33 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-tools.l-heading__icon<>
+    サービス改善要望
+
+.col-12.py-3.border-bottom.u-font-size-small
+  サービスに対する改善要望を受け付けております！
+  <br><br>
+  可能な限りご要望にお応えできるよう、最善を尽くしますが、
+  いかんせん、１人で開発から運用、プロモーション等を行なっておりますため、時間の都合上、対応できない場合もございます。
+  <br><br>
+  あらかじめご了承いただけますでしょうか！？
+
+
+.col-12.pt-3
+  = form_with(model: @improvement_request, url: improvement_requests_path) do |f|
+    - if @improvement_request.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@improvement_request.errors.count, "error")} prohibited this improvement_request from being saved:"
+        %ul
+          - @improvement_request.errors.full_messages.each do |message|
+            %li= message
+
+    .form-group
+      = f.label :request_type
+      = f.select :request_type, ImprovementRequest.request_types_i18n.keys.map {|k| [ImprovementRequest.request_types_i18n[k], k]}, { include_blank: "選択してください" }, class: "form-control"
+    .form-group
+      = f.label :body
+      = f.text_area :body, rows: 5, placeholder: "ここに入力してください。", class: "form-control"
+
+    = button_tag class: "c-btn c-btn--primary c-btn--block mt-3" do
+      %i.fas.fa-paper-plane<>
+      送信

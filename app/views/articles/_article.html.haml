@@ -1,0 +1,13 @@
+.row
+  = link_to article, class: "p-article-item col-12 p-3" do
+    .p-article-item__header.u-font-size-ext-small.d-flex.align-items-center
+      = image_tag(article.user.avatar.url, class: "u-image-size-thumbnail rounded-circle mr-1")
+      %span.mr-3
+        = article.user.name
+      %span.text-muted
+        = article.created_at.strftime("%Y/%m/%d %H:%M")
+    .p-article-item__title.text-break
+      = article.title
+    .p-article-item__meta
+      %i.fas.fa-map-marker-alt<>
+      = article.prefecture_names_ja

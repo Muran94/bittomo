@@ -1,0 +1,7 @@
+.u-font-size {
+  &-ext-small { font-size: $font-size-ext-small; }
+  &-small     { font-size: $font-size-small; }
+  &-regular   { font-size: $font-size-regular; }
+  &-big       { font-size: $font-size-big; }
+  &-ext-big   { font-size: $font-size-ext-big; }
+}

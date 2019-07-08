@@ -1,0 +1,12 @@
+%h1.l-heading.col-12
+  .container
+    ログイン
+.col-12.pt-3
+  = form_with(model: resource, as: resource_name, url: session_path(resource_name), local: true) do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sample@example.com", class: "form-control"
+    .form-group
+      = f.label :password
+      = f.password_field :password, autocomplete: "current-password", placeholder: "●●●●●●●●", class: "form-control"
+    = f.submit "ログインする", class: "c-btn c-btn--primary c-btn--block mt-3"

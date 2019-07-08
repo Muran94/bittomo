@@ -1,0 +1,67 @@
+.l-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  line-height: $header-height;
+  background: $primary;
+  z-index: $z-index-header;
+
+  &__container {
+    @extend .container;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+
+    &-item {
+      position: relative;
+      color: $white;
+
+      &:hover, &:active {
+        color: $white;
+      }
+
+      &--icon-based {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        width: $button-size-regular;
+        height: $button-size-regular;
+        text-align: center;
+
+        i {
+          font-size: 20px;
+          line-height: 1;
+          margin-bottom: $space-ext-narrow;
+        }
+        span {
+          font-size: 10px;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  & + .l-main {
+    margin-top: $header-height;
+  }
+}

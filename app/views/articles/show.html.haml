@@ -1,0 +1,37 @@
+.l-heading.col-12
+  .container.u-font-size-small.d-flex.align-items-center.mb-2
+    = image_tag(@article.user.avatar.url, class: "u-image-size-thumbnail rounded-circle mr-1")
+    %span.mr-3= @article.user.name
+    %span.text-muted.u-font-size-ext-small= @article.created_at.strftime("%Y/%m/%d %H:%M")
+  .container
+    %h1.u-font-size-regular.font-weight-bold.mb-0= @article.title
+
+.p-article-column.col-12
+  .p-article-column__name
+    %i.fas.fa-quote-right<>
+    募集内容
+  .p-article-column__content
+    = @article.body.html_safe
+
+.p-article-column.col-12
+  .p-article-column__name
+    %i.fas.fa-map-marker-alt<>
+    都道府県
+  .p-article-column__content
+    = @article.prefecture_names_ja
+
+
+.p-article-column.col-12
+  .p-article-column__name
+    %i.fas.fa-user-alt<>
+    投稿者
+  = link_to root_path, class: "p-article-column__content d-flex align-items-center" do
+    = image_tag(@article.user.avatar.url, class: "mr-1")
+    = @article.user.name
+
+.form-group.col-12.mt-5
+  %label メッセージ
+  %textarea.form-control{ rows: 5, placeholder: "#{@article.user.name}様にメッセージを送って、友達になりましょう！" }
+  .c-btn.c-btn--primary.c-btn--block.mt-1
+    %i.fas.fa-paper-plane
+    メッセージを送る
