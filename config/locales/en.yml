@@ -33,8 +33,8 @@ en:
   views:
     pagination:
       first: "&laquo; First"
-      last: "Last &raquo;"
-      previous: "&lsaquo; Prev"
+      last: "<i class='fas fa-chevron-left'></i>"
+      previous: "<i class='fas fa-chevron-right'></i>"
       next: "Next &rsaquo;"
       truncate: "&hellip;"
   helpers:

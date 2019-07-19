@@ -1,22 +1,22 @@
-= form_for @article do |f|
-  - if @article.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
-      %ul
-        - @article.errors.full_messages.each do |message|
-          %li= message
+.col-12.pt-3
+  = form_with(model: @article) do |f|
+    - if @article.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@article.errors.count, "error")} prohibited this article from being saved:"
+        %ul
+          - @article.errors.full_messages.each do |message|
+            %li= message
 
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
-  .field
-    = f.label :prefecture_ids
-    = f.text_field :prefecture_ids
-  .actions
-    = f.submit 'Save'
+    .form-group
+      = f.label :title
+      = f.text_field :title, placeholder: "例）初心者同士で腕を磨きませんか？", class: "form-control"
+    .form-group
+      = f.label :body
+      = f.text_area :body, rows: 5, placeholder: "例）初心者です！\n一緒にビリヤードの練習をできる友達を探しています！\n\nよろしくお願いいたします！", class: "form-control"
+    .form-group
+      = f.label :prefecture_ids
+      = f.collection_select :prefecture_ids, JpPrefecture::Prefecture.all, :code, :name, { include_blank: "選択してください（複数可）", include_hidden: false }, class: "form-control", multiple: true
+
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      %i.fas.fa-pen<>
+      募集記事作成

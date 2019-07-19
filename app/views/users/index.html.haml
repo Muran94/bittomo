@@ -1,0 +1,9 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-user-friends.l-heading__icon<>
+    ユーザー一覧
+
+.p-user-list.col-12
+  = render @users
+
+= paginate(@users)

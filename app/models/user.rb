@@ -26,4 +26,12 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
 
   enum gender: { male: 0, female: 1 }
+
+  def activity_prefecture_names_ja
+    activity_prefecture_ids.map { |p_id| JpPrefecture::Prefecture.find(code: p_id).name }.join("、")
+  end
+
+  def age
+    Happybirthday.born_on(birthday).age.years_old
+  end
 end

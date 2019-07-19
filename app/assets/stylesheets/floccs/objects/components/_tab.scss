@@ -1,0 +1,41 @@
+.c-tab {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: $button-size-regular;
+  line-height: $button-size-regular;
+  background: $light-gray;
+
+  @include media-breakpoint-up(md) {
+    padding-left: $space;
+    padding-right: $space;
+  }
+
+  &-item {
+    font-size: $font-size-small;
+    text-align: center;
+    color: $gray;
+    cursor: pointer;
+    user-select: none;
+    border-radius: $border-radius $border-radius 0 0;
+
+    @include media-breakpoint-down(md) {
+      &:first-child {
+        border-radius: 0 $border-radius 0 0;
+      }
+      &:last-child {
+        border-radius: $border-radius 0 0 0;
+      }
+    }
+
+    &--active {
+      background: $white;
+      color: $primary;
+      cursor: default;
+    }
+
+    &:not(&--active):hover {
+      opacity: $opacity;
+    }
+  }
+}

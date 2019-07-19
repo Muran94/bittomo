@@ -1,0 +1,18 @@
+.l-heading.col-12
+  .container
+    %h1.u-font-size-big.font-weight-bold.mb-0.d-flex.align-items-center
+      = image_tag(@user.avatar.url, alt: "ユーザープロフィール画像", class: "u-image-size-small rounded-circle mr-2")
+      = @user.name
+
+.c-tab
+  = link_to user_path(@user), class: "c-tab-item col-6" do
+    %i.fas.fa-user.mr-1<>
+    プロフィール
+  .c-tab-item.c-tab-item--active.col-6
+    %i.fas.fa-newspaper.mr-1<>
+    募集
+
+.p-article-list.col-12
+  = render partial: "articles/article", collection: @articles
+
+= paginate(@articles)

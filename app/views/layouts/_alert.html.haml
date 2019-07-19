@@ -1,0 +1,8 @@
+- flash.each do |key, value|
+  - key = "info" if key == "notice"
+  - key = "danger"  if key == "alert"
+  %div{class: "c-alert c-alert--closable c-alert--#{key}"}
+    .container
+      = value
+      %button{type: "button", class: "close", data: { dismiss: "alert", label: "Close" }}
+        %span{aria: { hidden: true }} &times;

@@ -3,8 +3,8 @@ ja:
     pagination:
       first: "&laquo; 最初へ"
       last: "最後へ &raquo;"
-      previous: "<< 前"
-      next: "次 >>"
+      previous: "<i class='fas fa-chevron-left'></i>"
+      next: "<i class='fas fa-chevron-right'></i>"
       truncate: "&hellip;"
   helpers:
     page_entries_info:

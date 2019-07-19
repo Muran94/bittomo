@@ -1,0 +1,18 @@
+.row
+  = link_to user_path(user), class: "p-user-item col-12 p-3" do
+    .p-user-item__header.u-font-size-ext-small.d-flex.align-items-center
+      = image_tag(user.avatar.url, class: "u-image-size-thumbnail rounded-circle mr-1")
+      %span.mr-3
+        = user.name
+    .p-user-item__meta
+      .p-user-item__meta-item
+        %i.fas.fa-map-marker-alt<>
+        = user.activity_prefecture_names_ja
+      .p-user-item__meta-item
+        %i.fas.fa-venus-mars<>
+        = user.gender_i18n
+      .p-user-item__meta-item
+        %i.fas.fa-birthday-cake<>
+        = "#{user.age}歳"
+    .p-user-item__introduction.u-font-size-ext-small
+      = user.introduction

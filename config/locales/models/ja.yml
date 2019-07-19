@@ -3,6 +3,12 @@ ja:
     models:
       user: ユーザー
     attributes:
+      article:
+        id: ID
+        user_id: ユーザーID
+        title: 募集タイトル
+        body: 募集内容
+        prefecture_ids: 都道府県
       user:
         id: ID
         name: ユーザー名

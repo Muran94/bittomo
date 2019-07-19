@@ -3,6 +3,12 @@ ja:
     models:
       user: User
     attributes:
+      article:
+        id: ID
+        user_id: User ID
+        title: Title
+        body: Article Content
+        prefecture_ids: Prefectures
       user:
         id: ID
         name: Name

@@ -67,7 +67,7 @@ $colors: map-merge(
 );
 
 $primary:       $primary !default;
-$secondary:     $deep-dark-primary !default;
+$secondary:     $dark-primary !default;
 $success:       $success !default;
 $info:          $primary !default;
 $warning:       $yellow !default;
@@ -171,7 +171,7 @@ $body-color:                $black !default;
 
 $link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 10%) !default;
+$link-hover-color:                        inherit !default;
 $link-hover-decoration:                   none !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 10% !default;
@@ -275,7 +275,7 @@ $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberati
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base:              $font-size-regular !default; // Assumes the browser default, typically `16px`
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 
@@ -686,8 +686,8 @@ $zindex-tooltip:                    1070 !default;
 
 // Navs
 
-$nav-link-padding-y:                .5rem !default;
-$nav-link-padding-x:                1rem !default;
+$nav-link-padding-y:                $space-ext-narrow !default;
+$nav-link-padding-x:                $space !default;
 $nav-link-disabled-color:           $gray-600 !default;
 
 $nav-tabs-border-color:             $gray-300 !default;

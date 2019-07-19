@@ -1,0 +1,29 @@
+.c-alert {
+  @extend .container;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: $space-ext-wide;
+  z-index: $z-index-alert;
+  padding: $space 0;
+  box-shadow: $box-shadow;
+
+  @each $color, $value in $theme-colors {
+    &--#{$color} {
+      background: lighten($value, 30);
+      color: darken($value, 30);
+    }
+  }
+
+  &--closable {
+    padding-right: $space-wide;
+
+    .close {
+      position: absolute;
+      top: $space;
+      right: $space;
+      color: inherit;
+    }
+  }
+}

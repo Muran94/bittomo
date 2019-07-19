@@ -1,7 +1,7 @@
 .c-pagination {
   font-size: $font-size-small;
 
-  &__page {
+  &__btn {
     display: inline-block;
     padding: 0 $space-ext-narrow;
     height: $button-size-small;
@@ -9,44 +9,35 @@
     text-align: center;
     border-radius: $border-radius;
     color: $black;
-    background: $light-gray;
 
     a {
+      display: inline-block;
       color: inherit;
+      width: 100%;
+      height: 100%;
     }
 
     & + & {
       margin-left: ($space-ext-narrow / 2);
     }
 
-    &--current {
+    &:hover {
+      opacity: $opacity;
+    }
+
+    &:active {
+      opacity: $deep-opacity;
+    }
+
+    &--current-page {
       background: $primary;
       color: $white;
       font-weight: bold;
     }
 
-    &--gap {
-      background: none;
-      color: $gray;
+    &--prev,
+    &--next {
+      background: $light-gray;
     }
-  }
-  &__prev, &__next {
-    display: inline-block;
-    padding: 0 $space-ext-narrow;
-    height: $button-size-small;
-    line-height: $button-size-small;
-    border-radius: $border-radius;
-    color: $black;
-    background: $light-gray;
-
-    a {
-      color: inherit;
-    }
-  }
-  &__prev {
-    margin-right: ($space-ext-narrow / 2);
-  }
-  &__next {
-    margin-left: ($space-ext-narrow / 2);
   }
 }

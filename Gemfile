@@ -30,6 +30,9 @@ gem 'config' # 環境別にSettings.ymlを設定できるようにするため�
 gem 'enum_help' # enumのlocale用
 gem 'impressionist' # アクセス解析用
 gem 'haml-rails' # erbの代わりとなるテンプレートエンジン
+gem 'happybirthday' # 生年月日から年齢を計算するためのGem
+gem 'active_decorator' # デコレーター
+gem 'mailboxer' # メッセージ送信用
 
 group :development, :test do
   # pry 周り

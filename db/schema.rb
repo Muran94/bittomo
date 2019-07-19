@@ -49,11 +49,12 @@ ActiveRecord::Schema.define(version: 2019_07_08_022542) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "avatar"
-    t.string "name"
-    t.integer "gender"
-    t.date "birthday"
     t.string "activity_prefecture_ids", default: [], array: true
+    t.string "avatar"
+    t.date "birthday"
+    t.integer "gender"
+    t.string "name"
+    t.string "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

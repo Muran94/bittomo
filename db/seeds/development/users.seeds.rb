@@ -5,7 +5,8 @@ attributes = [
     email: "headiv94@gmail.com",
     gender: :male,
     birthday: Time.zone.parse('1994-01-13'),
-    activity_prefecture_ids: [[1, 13], [12]].sample
+    activity_prefecture_ids: [[1, 13], [12]].sample,
+    introduction: "頑張る！"
   },
   {
     avatar: "kenichi.jpg",
@@ -21,7 +22,8 @@ attributes = [
     email: "boroboro@gmail.com",
     gender: :female,
     birthday: Time.zone.parse('1990-03-12'),
-    activity_prefecture_ids: [3]
+    activity_prefecture_ids: [3],
+    introduction: "youtubeにビリヤード動画あげてます！よかったら仲良くしてね！"
   },
   {
     avatar: "shibata.jpg",
@@ -37,7 +39,8 @@ attributes = [
     email: "tsuchikata@gmail.com",
     gender: :male,
     birthday: Time.zone.parse('1985-04-11'),
-    activity_prefecture_ids: [13]
+    activity_prefecture_ids: [13],
+    introduction: "プロやってます！日本一位目指して日々練習頑張ります！"
   }
 ]
 
@@ -50,6 +53,7 @@ attributes.each do |attr|
     user.gender                  = attr[:gender]
     user.birthday                = attr[:birthday]
     user.activity_prefecture_ids = attr[:activity_prefecture_ids]
+    user.introduction            = attr[:introduction]
     user.password                = "password"
     user.password_confirmation   = "password"
   end

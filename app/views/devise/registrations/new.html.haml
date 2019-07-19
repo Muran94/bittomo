@@ -22,5 +22,5 @@
       = f.number_field :birthday, placeholder: "例）1984/02/24 → 19840224", class: "form-control"
     .form-group
       = f.label :activity_prefecture_ids
-      = f.collection_select :activity_prefecture_ids, JpPrefecture::Prefecture.all, :code, :name, { include_blank: "選択してください（複数可）" }, class: "form-control", multiple: true
+      = f.collection_select :activity_prefecture_ids, JpPrefecture::Prefecture.all, :code, :name, { include_blank: "選択してください（複数可）", include_hidden: false }, class: "form-control", multiple: true
     = f.submit "登録する", class: "c-btn c-btn--primary c-btn--block mt-3"
