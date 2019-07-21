@@ -1,0 +1,48 @@
+.c-message-list {
+
+}
+.c-message {
+  display: flex;
+  justify-content: flex-end;
+  font-size: $font-size-small;
+
+  &__body {
+    display: inline-block;
+    max-width: 80%;
+    padding: $space-ext-narrow $space;
+
+    p {
+      margin-bottom: 0;
+    }
+    p + p {
+      margin-top: $space;
+    }
+  }
+
+  &--partner {
+    justify-content: flex-start;
+
+    .c-message__body {
+      color: $black;
+      background: $light-gray;
+      border-radius: $border-radius $border-radius $border-radius 1px;
+    }
+  }
+
+  &--mine {
+    justify-content: flex-end;
+
+    .c-message__body {
+      color: $white;
+      background: $primary;
+      border-radius: $border-radius $border-radius 1px $border-radius;
+    }
+  }
+
+  & + & {
+    margin-top: $space;
+  }
+}
+.c-message-form {
+  border-bottom: 1px solid $light-gray;
+}

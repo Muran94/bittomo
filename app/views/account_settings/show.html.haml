@@ -1,0 +1,34 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-users-cog.l-heading__icon<>
+    アカウント設定
+
+.c-list-group.col-12
+  .row
+    = link_to edit_account_settings_profiles_path, class: "c-list-group-item col-12" do
+      %i.fas.fa-user-edit<>
+      プロフィール編集
+  .row
+    = link_to edit_account_settings_privacies_path, class: "c-list-group-item col-12" do
+      %i.fas.fa-user-lock<>
+      公開設定
+  .row
+    = link_to edit_account_settings_notifications_path, class: "c-list-group-item col-12" do
+      %i.fas.fa-bell<>
+      通知設定
+  .row
+    = link_to edit_account_settings_article_arrival_notifications_path, class: "c-list-group-item col-12" do
+      %i.fas.fa-newspaper<>
+      新規募集の通知条件設定
+  .row
+    = link_to "#", class: "c-list-group-item col-12" do
+      %i.fas.fa-envelope<>
+      メールアドレス変更
+  .row
+    = link_to "#", class: "c-list-group-item col-12" do
+      %i.fas.fa-lock<>
+      パスワード変更
+
+.col-12.u-font-size-ext-small.text-center.mt-5
+  = link_to user_registration_path, method: :delete, class: "text-muted", data: { confirm: "退会をすると、アカウントに紐づく全てのデータが削除されます。\nまた、退会後のアカウント復旧は致しかねます。\n\n本当に退会をしてもよろしいですか？" } do
+    退会はこちら

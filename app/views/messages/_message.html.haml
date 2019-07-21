@@ -1,0 +1,4 @@
+- if message.mine?(current_user)
+  = render 'my_message', message: message
+- else
+  = render 'partners_message', message: message

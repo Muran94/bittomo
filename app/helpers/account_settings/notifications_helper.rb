@@ -1,0 +1,2 @@
+module AccountSettings::NotificationsHelper
+end

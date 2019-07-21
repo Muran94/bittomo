@@ -11,7 +11,7 @@
           = link_to root_path, class: "l-header__nav-item l-header__nav-item--icon-based" do
             %i.fas.fa-search
             %span 検索
-          = link_to root_path, class: "l-header__nav-item l-header__nav-item--icon-based" do
+          .l-header__nav-item.l-header__nav-item--icon-based{data: { toggle: "sidebar", target: "#sidebar"} }
             %i.fas.fa-bars
             %span メニュー
         - else

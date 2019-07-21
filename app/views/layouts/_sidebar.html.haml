@@ -1,0 +1,25 @@
+- if user_signed_in?
+  #sidebar.l-sidebar
+    .l-sidebar__body
+      .c-list-group
+        = link_to user_profile_path(current_user), class: "c-list-group-item c-list-group-item--profile" do
+          = image_tag(current_user.avatar.url, class: "mr-2")
+          .d-flex.flex-column
+            .u-font-size-regular.text-white= current_user.name
+            .u-font-size-small.text-white= current_user.email
+        = link_to articles_path, class: "c-list-group-item" do
+          %i.fas.fa-newspaper<>
+          募集一覧
+        = link_to users_path, class: "c-list-group-item" do
+          %i.fas.fa-user-friends<>
+          ユーザー一覧
+        = link_to conversations_path, class: "c-list-group-item" do
+          %i.fas.fa-envelope<>
+          メッセージ
+        = link_to account_settings_path, class: "c-list-group-item" do
+          %i.fas.fa-users-cog<>
+          アカウント設定
+        = link_to destroy_user_session_path, method: :delete, class: "c-list-group-item" do
+          %i.fas.fa-sign-out-alt<>
+          ログアウト
+    .l-sidebar__mask

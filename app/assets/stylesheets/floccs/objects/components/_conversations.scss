@@ -1,0 +1,29 @@
+.c-conversation-list {
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid $light-gray;
+
+    &--has-unread-message:before {
+      content: '';
+      position: absolute;
+      top: $space;
+      left: $space;
+      transform: translateX(-50%);
+      width: $font-size-regular;
+      height: $font-size-regular;
+      border-radius: 50%;
+      background: $accent;
+    }
+
+    &-avatar {
+      @extend .u-image-size-small;
+      @extend .rounded-circle;
+    }
+  }
+}

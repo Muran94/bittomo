@@ -1,0 +1,39 @@
+.l-sidebar {
+  z-index: $z-index-sidebar;
+  display: none;
+
+  &--is-opened {
+    .l-sidebar__mask {
+      opacity: 1;
+    }
+
+    .l-sidebar__body {
+      right: 0;
+    }
+  }
+
+  &__mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity .25s;
+  }
+
+  &__body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -400px;
+    width: 75%;
+    max-width: 400px;
+    background: $white;
+    transition: right .25s;
+    z-index: ($z-index-sidebar + 1);
+  }
+}

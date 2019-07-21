@@ -1,0 +1,7 @@
+.c-message.c-message--mine
+  .d-flex.flex-column.justify-content-end.text-right.u-font-size-tiny.mr-1
+    - if message.read?
+      .text-muted 既読
+    .text-muted= message.received_at
+  .c-message__body
+    = simple_format(message.body)

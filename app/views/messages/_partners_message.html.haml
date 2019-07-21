@@ -1,0 +1,5 @@
+.c-message.c-message--partner
+  .c-message__body
+    = simple_format(message.body)
+  .d-flex.flex-column.justify-content-end.text-left.u-font-size-tiny.ml-1
+    .text-muted= message.received_at

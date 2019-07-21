@@ -1,0 +1,14 @@
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-envelope.l-heading__icon<>
+    = "#{@conversation.partner(current_user).name}さんとのメッセージ"
+
+.c-message-form.col-12.p-3
+  = form_with(model: @new_message, url: conversation_messages_path(@conversation)) do |form|
+    = form.text_area :body, placeholder: " ", class: "form-control"
+    %button{type: "submit", class: "c-btn c-btn--primary c-btn--block mt-1"}
+      %i.fas.fa-paper-plane
+      メッセージを送る
+
+.c-message-list.col-12.p-3
+  = render @messages

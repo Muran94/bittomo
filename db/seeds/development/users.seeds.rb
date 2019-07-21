@@ -41,12 +41,20 @@ attributes = [
     birthday: Time.zone.parse('1985-04-11'),
     activity_prefecture_ids: [13],
     introduction: "プロやってます！日本一位目指して日々練習頑張ります！"
+  },
+  {
+    name: "ふうる",
+    email: "fool@gmail.com",
+    gender: :male,
+    birthday: Time.zone.parse('1981-05-16'),
+    activity_prefecture_ids: [1],
+    introduction: "全員ぶっ倒す。俺に勝てるハスラーがいるのか？"
   }
 ]
 
 attributes.each do |attr|
   User.find_or_create_by(email: attr[:email]) do |user|
-    File.open("#{Rails.root}/app/assets/images/samples/users/#{attr[:avatar]}") { |sample_image| user.avatar = sample_image }
+    File.open("#{Rails.root}/app/assets/images/samples/users/#{attr[:avatar]}") { |sample_image| user.avatar = sample_image } if attr[:avatar].present?
 
     user.name                    = attr[:name]
     user.email                   = attr[:email]

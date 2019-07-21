@@ -8,11 +8,12 @@
 #  reset_password_token    :string
 #  reset_password_sent_at  :datetime
 #  remember_created_at     :datetime
-#  avatar                  :string
-#  name                    :string
-#  gender                  :integer
-#  birthday                :date
 #  activity_prefecture_ids :string           default([]), is an Array
+#  avatar                  :string
+#  birthday                :date
+#  gender                  :integer
+#  name                    :string
+#  introduction            :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #

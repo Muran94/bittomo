@@ -14,7 +14,14 @@
 class Article < ApplicationRecord
   belongs_to :user
 
+  def owner?(_user)
+    return false if _user.nil?
+    user_id == _user.id
+  end
+
   def prefecture_names_ja
     prefecture_ids.map { |p_id| JpPrefecture::Prefecture.find(code: p_id).name }.join("、")
   end
+
+
 end

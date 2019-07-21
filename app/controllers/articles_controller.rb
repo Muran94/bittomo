@@ -11,6 +11,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @conversation = Conversation.find_or_initialize_by(sender_id: current_user&.id, receiver_id: @article.user_id)
+    @conversation.messages.build
   end
 
   # GET /articles/new

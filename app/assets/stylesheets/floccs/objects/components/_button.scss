@@ -28,6 +28,11 @@
     background: $white;
   }
 
+  &--gray {
+    background: $light-gray;
+    color: $black;
+  }
+
   &--link {
     background: transparent;
   }
@@ -40,5 +45,13 @@
   &--small {
     height: $button-size-small;
     line-height: $button-size-small;
+  }
+
+  &--outline {
+    &.c-btn--primary {
+      background: transparent;
+      border: 1px solid $primary;
+      color: $primary
+    }
   }
 }

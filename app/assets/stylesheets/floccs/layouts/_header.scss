@@ -47,6 +47,12 @@
         width: $button-size-regular;
         height: $button-size-regular;
         text-align: center;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          opacity: $opacity;
+        }
 
         i {
           font-size: 20px;

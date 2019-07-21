@@ -17,7 +17,7 @@
     %i.fas.fa-quote-right<>
     自己紹介文
   .c-content-column__value
-    = simple_format @user.introduction.html_safe
+    = simple_format @user.introduction&.html_safe
 
 .c-content-column.col-12
   .c-content-column__label
@@ -40,9 +40,4 @@
   .c-content-column__value
     = "#{@user.age}歳"
 
-.form-group.col-12.mt-5
-  %label メッセージ
-  %textarea.form-control{ rows: 5, placeholder: "#{@user.name}様にメッセージを送って、友達になりましょう！" }
-  .c-btn.c-btn--primary.c-btn--block.mt-1
-    %i.fas.fa-paper-plane
-    メッセージを送る
+= render 'conversations/form', conversation: @conversation, user: @user

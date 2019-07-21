@@ -1,0 +1,47 @@
+.c-list-group {
+  &-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 $space;
+    height: $button-size-regular;
+    border-bottom: 1px solid $light-gray;
+    color: $black;
+
+    i {
+      flex-basis: 20px;
+      margin-right: $space;
+      color: $primary;
+      font-size: $font-size-regular;
+    }
+
+    &:after {
+      @extend .fas;
+      content: fa-content($fa-var-chevron-right);
+      position: absolute;
+      top: 50%;
+      right: $space;
+      transform: translateY(-50%);
+      color: $gray;
+      font-size: $font-size-ext-small;
+    }
+
+    &--profile {
+      background: $primary;
+      color: $white;
+      height: $header-height;
+
+      &:after {
+        color: $white;
+      }
+
+      img {
+        $image-size: $header-height - ($space-narrow * 2);
+
+        width: $image-size;
+        height: $image-size;
+        border-radius: 50%;
+      }
+    }
+  }
+}

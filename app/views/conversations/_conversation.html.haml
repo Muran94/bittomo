@@ -1,0 +1,10 @@
+.row
+  = link_to conversation_messages_path(conversation), class: "c-conversation-list__item #{'c-conversation-list__item--has-unread-message' if conversation.has_any_unread_message?(current_user)} d-flex col-12 p-3" do
+    - partner = conversation.partner(current_user)
+    = image_tag(partner.avatar.url, alt: "プロフィール画像", class: "c-conversation-list__item-avatar mr-3")
+    .d-flex.flex-column.align-content-center.w-100
+      .d-flex.justify-content-between.mb-1
+        .u-font-size-regular= partner.name
+        .u-font-size-ext-small.text-muted= conversation.messages.last.received_at
+      .d-body.u-font-size-small
+        = conversation.messages.last.body.first(20)

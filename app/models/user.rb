@@ -8,11 +8,12 @@
 #  reset_password_token    :string
 #  reset_password_sent_at  :datetime
 #  remember_created_at     :datetime
-#  avatar                  :string
-#  name                    :string
-#  gender                  :integer
-#  birthday                :date
 #  activity_prefecture_ids :string           default([]), is an Array
+#  avatar                  :string
+#  birthday                :date
+#  gender                  :integer
+#  name                    :string
+#  introduction            :string
 #  created_at              :datetime         not null
 #  updated_at              :datetime         not null
 #
@@ -24,6 +25,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :articles, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   enum gender: { male: 0, female: 1 }
 
@@ -33,5 +35,10 @@ class User < ApplicationRecord
 
   def age
     Happybirthday.born_on(birthday).age.years_old
+  end
+
+  def owner?(current_user)
+    return false if current_user.nil?
+    id == current_user.id
   end
 end

@@ -30,9 +30,4 @@
     = image_tag(@article.user.avatar.url, class: "mr-1")
     = @article.user.name
 
-.form-group.col-12.mt-5
-  %label メッセージ
-  %textarea.form-control{ rows: 5, placeholder: "#{@article.user.name}様にメッセージを送って、友達になりましょう！" }
-  .c-btn.c-btn--primary.c-btn--block.mt-1
-    %i.fas.fa-paper-plane
-    メッセージを送る
+= render 'conversations/form', conversation: @conversation, user: @article.user

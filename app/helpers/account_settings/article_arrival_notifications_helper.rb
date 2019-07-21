@@ -1,0 +1,2 @@
+module AccountSettings::ArticleArrivalNotificationsHelper
+end

@@ -9,7 +9,9 @@ require("@rails/activestorage").start()
 require("channels")
 
 import Alert from './components/Alert';
+import Sidebar from './components/Sidebar';
 
 document.addEventListener('turbolinks:load', function() {
-  document.querySelectorAll('.c-alert').forEach($alert => { new Alert($alert) })
+  document.querySelectorAll('.c-alert').forEach($alert => { new Alert($alert) });
+  document.querySelectorAll('[data-toggle="sidebar"]').forEach($sidebarToggleButton => { new Sidebar($sidebarToggleButton) });
 });

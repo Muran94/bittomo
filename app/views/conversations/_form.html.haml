@@ -1,0 +1,24 @@
+- if user_signed_in?
+  - unless user.owner?(current_user)
+    - if conversation.new_record?
+      .col-12
+        = form_with(model: conversation, url: conversations_path, method: :post) do |form|
+          = form.hidden_field :receiver_id, value: user.id
+          = form.fields_for :messages do |message_form|
+            .form-group.mt-5
+              = message_form.label :body, "メッセージ"
+              = message_form.text_area :body, class: "form-control", rows: 5, placeholder: "#{user.name}様にメッセージを送って、友達になりましょう！"
+          %button{type: "submit", class: "c-btn c-btn--primary c-btn--block mt-1"}
+            %i.fas.fa-paper-plane
+            メッセージを送る
+    - else
+      .col-12.mt-5
+        .text-center.text-muted
+          = "#{user.name}様とのトークは既に存在しています。"
+        = link_to "トークを開く", conversation_messages_path(conversation), class: "c-btn c-btn--primary c-btn--block mt-1"
+- else
+  .col-12.mt-5
+    .text-center.text-muted
+      メッセージを送信するには、ログイン・会員登録が必要です。
+      = link_to "会員登録", new_user_registration_path, class: "c-btn c-btn--primary c-btn--block mt-1"
+      = link_to "ログイン", new_user_session_path, class: "c-btn c-btn--outline c-btn--primary c-btn--block mt-1"
