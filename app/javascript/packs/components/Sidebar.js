@@ -16,11 +16,13 @@ class Sidebar {
 
   open() {
     this.$sidebar.style.display = 'block';
+    document.querySelector('body').classList.add('overflow-hidden');
     setTimeout(() => { this.$sidebar.classList.add('l-sidebar--is-opened'); }, 0);
   }
 
   close() {
     this.$sidebar.classList.remove('l-sidebar--is-opened');
+    document.querySelector('body').classList.remove('overflow-hidden');
     setTimeout(() => { this.$sidebar.style.display = 'none'; }, 250);
   }
 }

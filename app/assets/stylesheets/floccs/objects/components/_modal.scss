@@ -1,0 +1,47 @@
+.c-modal {
+  z-index: $z-index-modal;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity $transition-time;
+
+  &--is-opened {
+    display: block;
+    opacity: 1;
+  }
+
+  &__mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $mask-gray;
+  }
+
+  &__close-button {
+    position: absolute;
+    right: $space;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $gray;
+  }
+
+  &__dialog {
+    margin: $header-height auto 0;
+    background: $white;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+}
+
+body.overflow-hidden {
+  .c-modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

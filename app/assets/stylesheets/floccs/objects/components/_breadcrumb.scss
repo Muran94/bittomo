@@ -1,0 +1,22 @@
+.c-breadcrumb {
+  width: 100%;
+  padding: $space 0;
+  overflow-x: hidden;
+
+  a {
+    color: $gray;
+    font-size: $font-size-ext-small;
+  }
+
+  i {
+    margin: 0 $space-ext-narrow;
+    font-size: $font-size-ext-small;
+    color: $gray;
+  }
+
+  &__item {
+    &--current {
+      font-size: $font-size-small;
+    }
+  }
+}

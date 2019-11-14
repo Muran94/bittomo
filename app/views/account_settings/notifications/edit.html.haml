@@ -1,2 +1,17 @@
-%h1 AccountSettings::Notifications#edit
-%p Find me in app/views/account_settings/notifications/edit.html.haml
+- breadcrumb :notification_settings
+
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-edit.l-heading__icon<>
+    通知設定
+
+.col-12.pt-3
+  = form_with(model: @notification_setting, url: account_settings_notifications_path) do |form|
+    .form-group
+      = form.label :receive_article_arrival_notifications, "条件にマッチする新規募集の通知"
+      = form.select :receive_article_arrival_notifications, [['通知を受け取る', true], ['通知を受け取らない', false]], {}, class: "form-control"
+    .form-group
+      = form.label :receive_message_notifications, "メッセージ受信通知"
+      = form.select :receive_message_notifications, [['通知を受け取る', true], ['通知を受け取らない', false]], {}, class: "form-control"
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      保存

@@ -1,0 +1,2 @@
+module AccountSettings::EmailsHelper
+end

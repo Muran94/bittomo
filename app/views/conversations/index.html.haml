@@ -1,7 +1,8 @@
-%h1.l-heading.col-12
-  .container
-    %i.fas.fa-envelope.l-heading__icon<>
-    メッセージ一覧
+- breadcrumb :conversations
+
+= render 'common_partials/heading' do
+  %i.fas.fa-envelope.l-heading__icon<>
+  メッセージ一覧
 
 .p-conversation-list.col-12
   = render @conversations

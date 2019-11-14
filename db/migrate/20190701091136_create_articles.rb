@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.references :user, foreign_key: true
       t.string :title
       t.text :body
-      t.string :prefecture_ids, array: true, default: []
+      t.integer :prefecture_ids, array: true, default: []
 
       t.timestamps
     end

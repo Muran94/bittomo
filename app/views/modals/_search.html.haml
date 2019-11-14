@@ -1,0 +1,52 @@
+= render layout: 'common_partials/modal', locals: { target_id: "search-modal" } do
+  .l-heading.col-12
+    .container
+      %i.fas.fa-search.l-heading__icon<>
+      検索
+
+      %i.fas.fa-times.c-modal__close-button
+  .c-tab
+    .c-tab__nav
+      .c-tab__link.col-6{ class: "#{'c-tab__link--is-active' unless controller_name == 'users'}", data: { target: "#tab-search-article-form" } }
+        %i.fas.fa-newspaper.mr-1<>
+        募集
+      .c-tab__link.col-6{ class: "#{'c-tab__link--is-active' if controller_name == 'users'}", data: { target: "#tab-search-user-form" } }
+        %i.fas.fa-user-friends.mr-1<>
+        ユーザー
+    #tab-search-article-form.c-tab__item.container.col-12.py-3{ class: "#{'c-tab__item--is-active' unless controller_name == 'users'}" }
+      = search_form_for @search_article, as: :article_q do |form|
+        .form-group
+          = form.label :title_cont, "募集タイトル"
+          = form.text_field :title_cont, placeholder: " ", class: "form-control"
+        .form-group
+          = form.label :prefecture_ids_in
+          = form.collection_select :prefecture_ids_in, JpPrefecture::Prefecture.all, :code, :name, { include_blank: "選択してください（複数可）", include_hidden: false }, class: "form-control", multiple: true
+        %button{type: "submit", class: "c-btn c-btn--primary c-btn--block"}
+          %i.fas.fa-search<>
+          検索
+        - if params[:article_q].present?
+          = link_to articles_path, class: "c-btn c-btn--gray c-btn--block mt-2" do
+            %i.fas.fa-times.text-muted<>
+            検索条件をリセット
+    #tab-search-user-form.c-tab__item.container.col-12.py-3{ class: "#{'c-tab__item--is-active' if controller_name == 'users'}" }
+      = search_form_for @search_user, as: :user_q do |form|
+        .form-group
+          = form.label :name_cont, "ユーザー名"
+          = form.text_field :name_cont, placeholder: " ", class: "form-control"
+        .form-group
+          = form.label :gender_eq
+          = form.select :gender_eq, User.genders_i18n.keys.map {|k| [User.genders_i18n[k], k]}, { include_blank: "選択してください" }, class: "form-control"
+        -# .form-row
+        -#   .form-group.col
+        -#     = form.label :age_gteq, "年齢（下限）"
+        -#     = form.select :age_gteq, (0..100).to_a, { include_blank: true }, class: "form-control"
+        -#   .form-group.col
+        -#     = form.label :age_lteq, "年齢（上限）"
+        -#     = form.select :age_lteq, (0..100).to_a, { include_blank: true }, class: "form-control"
+        %button{type: "submit", class: "c-btn c-btn--primary c-btn--block"}
+          %i.fas.fa-search<>
+          検索
+        - if params[:user_q].present?
+          = link_to users_path, class: "c-btn c-btn--gray c-btn--block mt-2" do
+            %i.fas.fa-times.text-muted<>
+            検索条件をリセット

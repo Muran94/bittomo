@@ -18,11 +18,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.75);
+    background: $mask-gray;
     opacity: 0;
     cursor: pointer;
     user-select: none;
-    transition: opacity .25s;
+    transition: opacity $transition-time;
   }
 
   &__body {
@@ -33,7 +33,14 @@
     width: 75%;
     max-width: 400px;
     background: $white;
-    transition: right .25s;
+    transition: right $transition-time;
     z-index: ($z-index-sidebar + 1);
+  }
+}
+
+body.overflow-hidden {
+  .l-sidebar {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }

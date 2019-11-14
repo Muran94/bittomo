@@ -8,6 +8,10 @@
       font-size: $font-size-ext-small;
       color: $gray;
 
+      &:hover, &:active {
+        color: $gray;
+      }
+
       &:not(:last-child) {
         margin-bottom: $space-ext-narrow;
       }

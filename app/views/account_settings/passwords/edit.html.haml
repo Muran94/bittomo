@@ -1,0 +1,20 @@
+- breadcrumb :password_edit
+
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-lock.l-heading__icon<>
+    パスワード変更
+
+.col-12.pt-3
+  = form_with(model: @user, url: account_settings_passwords_path, method: :patch) do |form|
+    .form-group
+      = form.label :current_password
+      = form.password_field :current_password, placeholder: " ", autofocus: true, class: "form-control"
+    .form-group
+      = form.label :password
+      = form.password_field :password, placeholder: " ", class: "form-control"
+    .form-group
+      = form.label :password_confirmation
+      = form.password_field :password_confirmation, placeholder: " ", autocomplete: "off", class: "form-control"
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      保存

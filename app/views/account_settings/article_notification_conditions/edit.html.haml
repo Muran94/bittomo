@@ -1,0 +1,27 @@
+- breadcrumb :article_notification_condition_settings
+
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-newspaper.l-heading__icon<>
+    新規募集の通知条件設定
+
+.col-12.py-3.border-bottom.u-font-size-small
+  新規募集の通知条件を設定すると、条件にマッチした募集記事が掲載された時に、通知が届くようになります。
+
+.col-12.pt-3
+  = form_with(model: @article_notification_condition, url: account_settings_article_notification_conditions_path, method: :patch) do |form|
+    .form-group
+      = form.label :gender
+      = form.select :gender, ArticleNotificationCondition.genders_i18n.keys.map {|k| [ArticleNotificationCondition.genders_i18n[k], k]}, { include_blank: "選択してください" }, class: "form-control"
+    .form-row
+      .form-group.col
+        = form.label :age_min
+        = form.select :age_min, (0..100).to_a, { include_blank: true }, class: "form-control"
+      .form-group.col
+        = form.label :age_max
+        = form.select :age_max, (0..100).to_a, { include_blank: true }, class: "form-control"
+    .form-group
+      = form.label :prefecture_ids
+      = form.collection_select :prefecture_ids, JpPrefecture::Prefecture.all, :code, :name, { include_blank: "選択してください（複数可）", include_hidden: false }, class: "form-control", multiple: true
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      保存

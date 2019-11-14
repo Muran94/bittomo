@@ -1,7 +1,7 @@
-%h1 Editing article
+- breadcrumb :edit_article, @article
+
+= render 'common_partials/heading' do
+  %i.fas.fa-edit.l-heading__icon<>
+  募集記事編集
 
 = render 'form'
-
-= link_to 'Show', @article
-\|
-= link_to 'Back', articles_path

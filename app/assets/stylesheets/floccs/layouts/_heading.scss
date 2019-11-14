@@ -1,5 +1,5 @@
 .l-heading {
-  padding: $space 0;
+  padding: $space-narrow 0;
   margin: 0;
   font-size: $font-size-regular;
   color: $black;
@@ -7,8 +7,8 @@
 
   &__icon {
     color: $primary;
-    margin-right: $space;
-    height: $font-size-regular;
+    margin-right: $space-narrow;
+    height: $font-size-big;
   }
 
   a {

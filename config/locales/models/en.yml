@@ -9,14 +9,23 @@ ja:
         title: Title
         body: Article Content
         prefecture_ids: Prefectures
+      article_notification_condition:
+        id: ID
+        user_id: User ID
+        gender: Gender
+        age_min: Age minimum
+        age_max: Age max
+        prefecture_ids: Prefectures
       user:
         id: ID
         name: Name
         email: Email
+        current_password: Current password
         password: Password
+        password_confirmation: Password confirmation
         gender: Gender
         birthday: Birthday
-        activity_prefecture_ids: Activity Prefectures
+        activity_prefecture_ids: Activity prefectures
       improvement_request:
         user_id: User ID
         request_type: Request type
@@ -26,6 +35,10 @@ ja:
         reply_email: Reply email
         body: Inquiry content
   enums:
+    article_notification_condition:
+      gender:
+        male: Male
+        female: Female
     user:
       gender:
         male: Male

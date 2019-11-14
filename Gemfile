@@ -33,6 +33,7 @@ gem 'haml-rails' # erbの代わりとなるテンプレートエンジン
 gem 'happybirthday' # 生年月日から年齢を計算するためのGem
 gem 'active_decorator' # デコレーター
 gem 'mailboxer' # メッセージ送信用
+gem 'gretel' # パンくずリスト
 
 group :development, :test do
   # pry 周り
@@ -53,6 +54,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rails_best_practices', require: false
 end
 
 group :test do

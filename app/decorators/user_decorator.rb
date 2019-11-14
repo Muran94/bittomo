@@ -8,4 +8,14 @@ module UserDecorator
     end
     "#{icon}#{gender_i18n}".html_safe
   end
+
+  def appropriate_avatar_url(size: :default)
+    return 'no-user.png' if avatar.blank?
+    case size.to_sym
+    when :default
+      avatar.url
+    when :thumb
+      avatar.thumb.url
+    end
+  end
 end

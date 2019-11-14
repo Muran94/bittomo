@@ -1,0 +1,2 @@
+module AccountSettings::PasswordsHelper
+end

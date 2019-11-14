@@ -1,7 +1,8 @@
-%h1.l-heading.col-12
-  .container
-    %i.fas.fa-user-friends.l-heading__icon<>
-    募集一覧
+- breadcrumb :articles
+
+= render 'common_partials/heading' do
+  %i.fas.fa-user-friends.l-heading__icon<>
+  募集一覧
 
 .p-article-list.col-12
   = render @articles

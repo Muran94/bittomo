@@ -1,5 +1,5 @@
 FROM ruby:2.6
-RUN apt-get update -qq && apt-get install -y vim nodejs postgresql-client yarn
+RUN apt-get update -qq && apt-get install -y vim nodejs postgresql-client yarn imagemagick
 
 
 # Install node.js and yarn

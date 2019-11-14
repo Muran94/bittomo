@@ -8,10 +8,14 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import Alert from './components/Alert';
+import Alert   from './components/Alert';
 import Sidebar from './components/Sidebar';
+import Modal   from './components/Modal'
+import Tab     from './components/Tab'
 
 document.addEventListener('turbolinks:load', function() {
   document.querySelectorAll('.c-alert').forEach($alert => { new Alert($alert) });
   document.querySelectorAll('[data-toggle="sidebar"]').forEach($sidebarToggleButton => { new Sidebar($sidebarToggleButton) });
+  document.querySelectorAll('[data-toggle="modal"]').forEach($modalToggleButton => { new Modal($modalToggleButton) });
+  document.querySelectorAll('.c-tab').forEach(($tab) => { new Tab($tab) });
 });

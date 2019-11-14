@@ -9,11 +9,20 @@ ja:
         title: 募集タイトル
         body: 募集内容
         prefecture_ids: 都道府県
+      article_notification_condition:
+        id: ID
+        user_id: ユーザーID
+        gender: 性別
+        age_min: 年齢（下限）
+        age_max: 年齢（上限）
+        prefecture_ids: 活動都道府県（複数選択可能）
       user:
         id: ID
         name: ユーザー名
         email: メールアドレス
+        current_password: 現在のパスワード
         password: パスワード
+        password_confirmation: パスワード（確認用）
         gender: 性別
         birthday: 生年月日
         activity_prefecture_ids: 活動地域
@@ -26,6 +35,10 @@ ja:
         reply_email: 返信用メールアドレス
         body: お問い合わせ内容
   enums:
+    article_notification_condition:
+      gender:
+        male: 男性
+        female: 女性
     user:
       gender:
         male: 男性

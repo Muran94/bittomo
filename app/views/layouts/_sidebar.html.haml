@@ -1,12 +1,15 @@
-- if user_signed_in?
-  #sidebar.l-sidebar
-    .l-sidebar__body
+#sidebar.l-sidebar
+  .l-sidebar__body
+    - if user_signed_in?
       .c-list-group
         = link_to user_profile_path(current_user), class: "c-list-group-item c-list-group-item--profile" do
           = image_tag(current_user.avatar.url, class: "mr-2")
           .d-flex.flex-column
             .u-font-size-regular.text-white= current_user.name
             .u-font-size-small.text-white= current_user.email
+        = link_to root_path, class: "c-list-group-item" do
+          %i.fas.fa-home<>
+          トップ
         = link_to articles_path, class: "c-list-group-item" do
           %i.fas.fa-newspaper<>
           募集一覧
@@ -22,4 +25,18 @@
         = link_to destroy_user_session_path, method: :delete, class: "c-list-group-item" do
           %i.fas.fa-sign-out-alt<>
           ログアウト
-    .l-sidebar__mask
+    - else
+      .container.py-3
+        = link_to "無料会員登録", new_user_registration_path, class: "c-btn c-btn--primary c-btn--block"
+        = link_to "ログイン", new_user_session_path, class: "c-btn c-btn--primary c-btn--outline c-btn--block mt-1"
+      .c-list-group
+        = link_to root_path, class: "c-list-group-item border-top" do
+          %i.fas.fa-home<>
+          トップ
+        = link_to articles_path, class: "c-list-group-item" do
+          %i.fas.fa-newspaper<>
+          募集一覧
+        = link_to users_path, class: "c-list-group-item" do
+          %i.fas.fa-user-friends<>
+          ユーザー一覧
+  .l-sidebar__mask

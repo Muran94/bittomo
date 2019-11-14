@@ -1,2 +1,21 @@
-%h1 Statics#top
-%p Find me in app/views/statics/top.html.erb
+- breadcrumb :root
+
+= render 'common_partials/heading' do
+  %i.fas.fa-user-friends.l-heading__icon<>
+  募集一覧
+
+.p-article-list.col-12
+  = render @articles
+
+.col-12.container
+  = link_to "全ての募集を見る", articles_path, class: "c-btn c-btn--gray c-btn--block my-5"
+
+= render 'common_partials/heading' do
+  %i.fas.fa-user-friends.l-heading__icon<>
+  ユーザー一覧
+
+.p-user-list.col-12
+  = render @users
+
+.col-12.container
+  = link_to "全てのユーザーを見る", articles_path, class: "c-btn c-btn--gray c-btn--block my-5"

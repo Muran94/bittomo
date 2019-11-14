@@ -1,23 +1,28 @@
 .c-tab {
-  display: flex;
-  justify-content: flex-start;
   width: 100%;
-  height: $button-size-regular;
-  line-height: $button-size-regular;
-  background: $light-gray;
 
-  @include media-breakpoint-up(md) {
-    padding-left: $space;
-    padding-right: $space;
+  &__nav {
+    display: flex;
+    justify-content: flex-start;
+    height: $button-size-regular;
+    line-height: $button-size-regular;
+    background: $light-gray;
+
+    @include media-breakpoint-up(md) {
+      padding-left: $space;
+      padding-right: $space;
+    }
   }
 
-  &-item {
+  &__link {
     font-size: $font-size-small;
     text-align: center;
     color: $gray;
     cursor: pointer;
     user-select: none;
     border-radius: $border-radius $border-radius 0 0;
+    transition: background $transition-time;
+    transition: color $transition-time;
 
     @include media-breakpoint-down(md) {
       &:first-child {
@@ -28,14 +33,25 @@
       }
     }
 
-    &--active {
+    &--is-active {
       background: $white;
       color: $primary;
       cursor: default;
     }
 
-    &:not(&--active):hover {
+    &:not(&--is-active):hover {
       opacity: $opacity;
+    }
+  }
+
+  &__item {
+    display: none;
+    opacity: 0;
+    transition: opacity $transition-time;
+
+    &--is-active {
+      display: block;
+      opacity: 1;
     }
   }
 }

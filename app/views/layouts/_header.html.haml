@@ -8,12 +8,19 @@
           = link_to new_article_path, class: "l-header__nav-item l-header__nav-item--icon-based" do
             %i.fas.fa-pen
             %span 募集
-          = link_to root_path, class: "l-header__nav-item l-header__nav-item--icon-based" do
+          .l-header__nav-item.l-header__nav-item--icon-based{data: { toggle: "modal", target: "#search-modal"} }
             %i.fas.fa-search
             %span 検索
           .l-header__nav-item.l-header__nav-item--icon-based{data: { toggle: "sidebar", target: "#sidebar"} }
             %i.fas.fa-bars
             %span メニュー
         - else
-          = link_to "ログイン", new_user_session_path, class: "l-header__nav-item c-btn c-btn--link c-btn--small text-white"
-          = link_to "会員登録", new_user_registration_path, class: "l-header__nav-item c-btn c-btn--white c-btn--small text-primary"
+          .l-header__nav-item.l-header__nav-item--icon-based{data: { toggle: "modal", target: "#search-modal"} }
+            %i.fas.fa-search
+            %span 検索
+          = link_to new_user_session_path, class: "l-header__nav-item l-header__nav-item--icon-based" do
+            %i.fas.fa-lock
+            %span ログイン
+          .l-header__nav-item.l-header__nav-item--icon-based{data: { toggle: "sidebar", target: "#sidebar"} }
+            %i.fas.fa-bars
+            %span メニュー

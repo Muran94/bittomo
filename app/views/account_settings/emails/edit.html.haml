@@ -1,0 +1,17 @@
+- breadcrumb :email_edit
+
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-envelope.l-heading__icon<>
+    メールアドレス変更
+
+.col-12.pt-3
+  = form_with(model: @user, url: account_settings_emails_path, method: :patch) do |form|
+    .form-group
+      %label 現在のメールアドレス
+      .form-control-plaintext.text-muted= @user.email
+    .form-group
+      = form.label :email, "新しいメールアドレス"
+      = form.email_field :email, value: "", placeholder: " ", autofocus: true, class: "form-control"
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      保存

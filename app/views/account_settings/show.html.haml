@@ -1,3 +1,5 @@
+- breadcrumb :account_settings
+
 %h1.l-heading.col-12
   .container
     %i.fas.fa-users-cog.l-heading__icon<>
@@ -17,15 +19,15 @@
       %i.fas.fa-bell<>
       通知設定
   .row
-    = link_to edit_account_settings_article_arrival_notifications_path, class: "c-list-group-item col-12" do
+    = link_to edit_account_settings_article_notification_conditions_path, class: "c-list-group-item col-12" do
       %i.fas.fa-newspaper<>
       新規募集の通知条件設定
   .row
-    = link_to "#", class: "c-list-group-item col-12" do
+    = link_to edit_account_settings_emails_path, class: "c-list-group-item col-12" do
       %i.fas.fa-envelope<>
       メールアドレス変更
   .row
-    = link_to "#", class: "c-list-group-item col-12" do
+    = link_to edit_account_settings_passwords_path, class: "c-list-group-item col-12" do
       %i.fas.fa-lock<>
       パスワード変更
 

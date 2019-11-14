@@ -1,0 +1,20 @@
+- breadcrumb :privacy_setting
+
+%h1.l-heading.col-12
+  .container
+    %i.fas.fa-user-lock.l-heading__icon<>
+    公開設定
+
+.col-12.pt-3
+  = form_with(model: @privacy_setting, url: account_settings_privacies_path) do |form|
+    .form-group
+      = form.label :show_activity_prefecture, "活動都道府県"
+      = form.select :show_activity_prefecture, [['公開', true], ['非公開', false]], {}, class: "form-control"
+    .form-group
+      = form.label :show_gender, "性別"
+      = form.select :show_gender, [['公開', true], ['非公開', false]], {}, class: "form-control"
+    .form-group
+      = form.label :show_age, "年齢"
+      = form.select :show_age, [['公開', true], ['非公開', false]], {}, class: "form-control"
+    = button_tag type: "submit", class: "c-btn c-btn--primary c-btn--block mt-3" do
+      保存

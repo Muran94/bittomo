@@ -1,3 +1,5 @@
+- breadcrumb :user, @user
+
 .l-heading.col-12
   .container
     %h1.u-font-size-big.font-weight-bold.mb-0.d-flex.align-items-center
@@ -5,12 +7,13 @@
       = @user.name
 
 .c-tab
-  .c-tab-item.c-tab-item--active.col-6
-    %i.fas.fa-user.mr-1<>
-    プロフィール
-  = link_to user_articles_path(@user), class: "c-tab-item col-6" do
-    %i.fas.fa-newspaper.mr-1<>
-    募集
+  .c-tab__nav
+    .c-tab__link.c-tab__link--is-active.col-6
+      %i.fas.fa-user.mr-1<>
+      プロフィール
+    = link_to user_articles_path(@user), class: "c-tab__link col-6" do
+      %i.fas.fa-newspaper.mr-1<>
+      募集
 
 .c-content-column.col-12
   .c-content-column__label
